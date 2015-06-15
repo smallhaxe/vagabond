@@ -6,7 +6,11 @@ class UsersController < ApplicationController
   end
   
   def profile
-    red
+    redirect_to user_path(current_user)
+  end
+  
+  def create
+    user_params = params.
   end
   
 end

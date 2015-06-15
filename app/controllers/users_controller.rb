@@ -5,6 +5,8 @@ class UsersController < ApplicationController
     render :new
   end
   
-  def profi
+  def profile
+    red
+  end
   
 end

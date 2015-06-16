@@ -10,18 +10,23 @@ class UsersController < ApplicationController
   
   def create
     user_params = params.require(:user).permit(:first_name, :last_name, :email, :password)
-    @user = User.create(user_params)
-    login(@user)
-    redirect_to users_path(@user.id)
+    user = User.new(user_params)
+
+    if user.save
+      login user
+
+      redirect_to "/users/#{user.id}"
+    else
+      redirect_to "/welcome"
+    end
   end
 
   def index
   	@users = User.all
   end
   
-  def show
-  	@user = User.find_by({id: params[:id]})
-  	@posts = Post.find_by({user_id: @user.id})
+  def show    
+  	 @user = User.find(params[:id])
   end
 
   def edit

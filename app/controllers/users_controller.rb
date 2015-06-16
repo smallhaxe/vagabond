@@ -42,17 +42,17 @@ class UsersController < ApplicationController
 
   private
 
-  def set_user
-  	@user = current_user
-  end
+    def set_user
+      @user = current_user
+    end
 
-  def user_params
-  	white_list = [
-  				:email, :email_confirmation,
-  				:password, :password_confirmation,
-  				:first_name, :last_name
-  				]
-  	params.require(:user).permit(*white_list)			
-  end
+    def user_params
+      white_list = [
+                      :email, :email_confirmation,
+                      :password, :password_confirmation,
+                      :first_name, :last_name
+                   ]
+      params.require(:user).permit(*white_list)			
+    end
 
 end

@@ -5,11 +5,12 @@ Rails.application.routes.draw do
   resources :posts
   
   resources :users, except: [:new]
-  get "/sign_up", to: "users#new", as: "new_user"
+  # get "/users/new", to: "welcome#index", as: "new_user"
   
   resources :places
   
-  get "/login", to: "sessions#new"
-  post "/login", to: "sessions#create"
+  post "/sessions", to: "sessions#create"
 
+  delete "/sessions/:id", to: "sessions#destroy"
+  
 end

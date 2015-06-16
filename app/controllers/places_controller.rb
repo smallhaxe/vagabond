@@ -20,7 +20,7 @@ class PlacesController < ApplicationController
 	end
 
 	def show
-		@place = Place.find_by({id: params[:id]})
+		@place = Place.find(params[:id])
 
 	end
 
@@ -49,7 +49,7 @@ class PlacesController < ApplicationController
 	end
 
 	def set_user_place
-		@place = current_user.places.find_by({:id, params[:id]})
+		@place = current_user.places.find(params[:id])
 		unless @place
 			redirect_to places_path
 		end

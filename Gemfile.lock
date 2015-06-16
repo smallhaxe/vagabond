@@ -37,13 +37,10 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.0)
-<<<<<<< HEAD
     autoprefixer-rails (5.2.0)
       execjs
       json
-=======
     bcrypt (3.1.10)
->>>>>>> 6ea2aa9bdf39529a3113ddb80195bd04c5d48450
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.3.4.1)
@@ -151,11 +148,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-<<<<<<< HEAD
-  bootstrap-sass (~> 3.3.4)
-=======
   bcrypt (~> 3.1.7)
->>>>>>> 6ea2aa9bdf39529a3113ddb80195bd04c5d48450
+  bootstrap-sass (~> 3.3.4)
   byebug
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)

@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
   
-  belongs_to :users
-  belongs_to :places
+  belongs_to :user
+  belongs_to :place
   
 end

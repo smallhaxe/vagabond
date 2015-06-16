@@ -5,12 +5,14 @@
 	<title>Welcome to Vagabonding</title>
 </head>
 <body>
-<h1>Vagabonding</h1>
-<div style="position: fixed; z-index: -99; width: 100%; height: 100%">
-	<iframe frameborder="0" height="100%" width="100%" 
-    src="https://www.youtube.com/embed/ygo5d0UuXB4">    
-	</iframe>
+<div id="wrapper">
+		<div id="box">
+			<h1>Vagabonding</h1>	
+		</div>
 </div>
+<script type="text/javascript">
+	$('#wrapper').tubular({videoId: 'ygo5d0UuXB4', start: 26});
+</script>
 </body>
 </html>
 

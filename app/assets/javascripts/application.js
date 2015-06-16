@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.tubular.1.0.js
 //= require turbolinks
 //= require_tree .

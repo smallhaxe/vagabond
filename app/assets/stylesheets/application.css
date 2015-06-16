@@ -11,5 +11,6 @@
  * file per style scope.
  *
  *= require bootstrap-3.2.0.min.scss
+ *= require body.scss
  *= require_self
  */

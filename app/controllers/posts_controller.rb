@@ -20,10 +20,11 @@ class PostsController < ApplicationController
 	end
 
 	def show
-		@post = Post.find_by({id: params[:id]})
+		@post = Post.find(params[:id])
 	end
 
 	def edit
+		@post = Post.find(params[:id])
 	end
 
 	def update
@@ -41,11 +42,15 @@ class PostsController < ApplicationController
 	private
 
 	def post_params
-		params.require(:post).permit(:author, :title, :body)
+		white_list = [
+					:author, :title, :body, 
+					:user_id, :place_id
+					]
+		params.require(:post).permit(*white_list)
 	end
 
 	def set_user_post
-		@post = current_user.posts.find_by({id: params[:id]})
+		@post = current_user.posts.find(params[:id])
 		unless @post_path
 			redirect_to posts_path
 		end

@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   
-  root to: "welcome#index"
+
+ root to: "welcome#index"
+
+  get "/welcome", to: "welcome#index"
+
   
   resources :posts
   
@@ -14,3 +18,4 @@ Rails.application.routes.draw do
   delete "/sessions/:id", to: "sessions#destroy"
   
 end
+

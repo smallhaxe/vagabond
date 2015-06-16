@@ -30,7 +30,7 @@ posts_seeds =   [
                   ["Vanessa", "Hello, Hipsters!", FFaker::HipsterIpsum::paragraphs],
                   ["Ugo", "Hello, Hipsters!", FFaker::HipsterIpsum::paragraphs],
                 ]
-user_seeds.each do |first_name, last_name, email, password|
+users_seeds.each do |first_name, last_name, email, password|
   
   User.create(
     first_name: first_name, last_name: last_name,
@@ -45,5 +45,5 @@ end
   
 
 posts_seeds.each do |author, title, body|
-  Place.create( author: author, title: title, body: body )
+  Post.create( author: author, title: title, body: body )
 end

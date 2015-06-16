@@ -1,23 +1,61 @@
-<h1>Welcome, <%= @user.first_name %>.</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
-<%= form_for @user, url: "/users/#{@user.id}/update", method: "post" do |f| %>
+  <style>
+    
 
-  <div>
-    <%= f.text_field :first_name, value: "@user[:first_name]" %>
-  </div>
+    .left-content {
 
-  <div>
-    <%= f.text_field :last_name, value: "@user[:last_name]" %>
-  </div>
+      background-color: green;
 
-  <div>
-    <%= f.text_field :email, value: "@user[:email]" %>
-  </div>
+      height: 600px;
 
-  <div>
-    <%= f.password_field :email, placeholder: "password" %>
-  </div>
+}
 
-  <%= f.submit "Update" %>
+.right-content {
+  height: 600px;
+  background-color: purple;
+   overflow: scroll;
+}
+
+
+
+.container h1 {
+
+  color: white;
+}
+header h1 {
+
+  padding-top: 5px;
+}
+
+
+  </style>
+</head>
+<body>
   
-<% end %>
+
+  <div class="container-fluid">
+      <h1>Welcome, <small>person's name</small></h1>
+  </div>
+
+
+<div class="container" ".col-lg">
+
+
+
+    <div class="left-content col-md-5">.col-md-5</div>
+  <div class="right-content col-md-6 col-md-offset-1" >sed
+
+</div>
+
+
+
+
+</div>
+
+
+</body>
+
+</html>

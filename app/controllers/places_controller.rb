@@ -42,7 +42,10 @@ class PlacesController < ApplicationController
 	private
 
 	def place_params
-		params.require(:place).permit(:name, :picture)
+		white_list = [
+						:name, :picture
+					]
+		params.require(:place).permit(*white_list)
 	end
 
 	def set_user_place

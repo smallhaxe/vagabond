@@ -53,6 +53,7 @@
 
 <body>
 
+  <% if current_user == @user%>
   <%= render "/show/navbar"  %>
 
   <div class="container-fluid">
@@ -86,7 +87,11 @@
     </div>
 
   </div>
-
+  <% else %>
+    <script type="text/javascript">
+      window.location.href="/welcome"  // put your correct path in a string here
+    </script>
+  <% end %>
 
 </body>
 </html>

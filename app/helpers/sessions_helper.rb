@@ -5,7 +5,7 @@ module SessionsHelper
 
 	def logged_in?
 		unless current_user
-			redirect_to login_path
+			redirect_to ("/welcome")
 		end
 	end
 

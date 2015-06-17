@@ -21,14 +21,14 @@ places_seeds = [
                 ]
 
 posts_seeds =   [
-                  [1, "Hello, World!", "I'm Tejaswi!"],
-                  [2, "Hello, World!", "I'm Wyatt!"],
-                  [3, "Hello, World!", "I'm Vanessa"],
-                  [4, "Hello, World!", "I'm Ugo!"],
-                  [1, "Hello, Hipsters!", FFaker::HipsterIpsum::paragraphs],
-                  [2, "Hello, Hipsters!", FFaker::HipsterIpsum::paragraphs],
-                  [3, "Hello, Hipsters!", FFaker::HipsterIpsum::paragraphs],
-                  [4, "Hello, Hipsters!", FFaker::HipsterIpsum::paragraphs],
+                  [1, nil, "Hello, World!", "I'm Tejaswi!"],
+                  [2, nil, "Hello, World!", "I'm Wyatt!"],
+                  [3, nil, "Hello, World!", "I'm Vanessa"],
+                  [4, nil, "Hello, World!", "I'm Ugo!"],
+                  [1, 1, "Hello, Hipsters!", FFaker::HipsterIpsum::paragraphs],
+                  [2, 2, "Hello, Hipsters!", FFaker::HipsterIpsum::paragraphs],
+                  [3, 3, "Hello, Hipsters!", FFaker::HipsterIpsum::paragraphs],
+                  [4, 1, "Hello, Hipsters!", FFaker::HipsterIpsum::paragraphs],
                 ]
 users_seeds.each do |first_name, last_name, email, password|
   
@@ -44,6 +44,6 @@ places_seeds.each do |name, picture|
 end
   
 
-posts_seeds.each do |id, title, body|
-  Post.create( user_id: id, title: title, body: body )
+posts_seeds.each do |uid, pid, title, body|
+  Post.create( user_id: uid, place_id: pid, title: title, body: body )
 end

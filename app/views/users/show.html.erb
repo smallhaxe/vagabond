@@ -9,9 +9,10 @@
 
     .left-content {
       background-color: #eee;
-      height: 600px;
-       border-style: solid;
-    border-width: 1px;  
+      height: 600px; 
+      border-style: solid;
+      border-width: 1px;  
+
     }
 
     .right-content {
@@ -52,7 +53,9 @@
 </head>
 
 <body>
-
+    
+  <%= render "/show/navbar"  %>
+    
   <div class="container-fluid">
       <h2>Welcome, <small><%= @user.first_name %></small></h2>
   </div>

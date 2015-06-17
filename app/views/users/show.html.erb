@@ -9,15 +9,19 @@
 
     .left-content {
 
-      background-color: green;
+      background-color: #eee;
       height: 600px;
+       border-style: solid;
+    border-width: 1px;  
 
     }
 
     .right-content {
       
       height: 600px;
-      background-color: purple;
+      background-color: #eee;
+      border-style: solid;
+      border-width: 1px;  
       overflow: scroll;   
     }
 
@@ -34,6 +38,20 @@
 
     }
 
+    .container-fluid h2 {
+      padding-left: 140px;
+
+    }
+
+
+    .rendered-data {
+      padding-top: 350px;
+      padding-left: 10px;
+    } 
+
+    .container {
+      padding-bottom: 50px;
+    }
 
   </style>
 
@@ -41,23 +59,35 @@
 
 <body>
   
-  <%= render "navbar"  %>
   <div class="container-fluid">
-      <h1>Welcome, <small>person's name</small></h1>
+      <h2>Welcome, <small><%= @user.first_name %></small></h2>
   </div>
-
 
   <div class="container" ".col-lg">
 
-
     <div class="left-content col-md-5">
 
-      Welcome <%= @user.email %>
+
+      <div class="rendered-data">
+
+        <h3><span class="label label-default">First Name:</span>   <%=@user.first_name %></h3>
+        <h3><span class="label label-default">Last Name:</span>   <%=@user.last_name %></h3>
+        <h3><span class="label label-default">Current City:</span>   <%=@user.current_city %></h3>
+        <h3><span class="label label-default">Email:</span>   <%=@user.email %></h3>
+        
+      </div>
 
     </div>
 
-    <div class="right-content col-md-6 col-md-offset-1" ></div>
+    <div class="right-content col-md-6 col-md-offset-1" >
 
+      <div class="page-header">
+
+        <h2><small>Your posts</small></h2>
+
+      </div>
+
+    </div>
 
   </div>
 

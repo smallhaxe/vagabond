@@ -8,17 +8,13 @@
     
 
     .left-content {
-<<<<<<< HEAD
-      background-color: green;
-      height: 600px;
-=======
+
 
       background-color: #eee;
       height: 600px;
-       border-style: solid;
-    border-width: 1px;  
+      border-style: solid;
+      border-width: 1px;  
 
->>>>>>> rendering_posts_profile
     }
 
     .right-content {
@@ -59,7 +55,7 @@
 </head>
 
 <body>
-
+  <%= render "/show/navbar"  %>
   <div class="container-fluid">
       <h2>Welcome, <small><%= @user.first_name %></small></h2>
   </div>

@@ -38,7 +38,6 @@
 
     }
 
-
     .rendered-data {
       padding-top: 350px;
       padding-left: 10px;
@@ -53,9 +52,10 @@
 </head>
 
 <body>
-    
+
+  <% if current_user == @user%>
   <%= render "/show/navbar"  %>
-    
+
   <div class="container-fluid">
       <h2>Welcome, <small><%= @user.first_name %></small></h2>
   </div>
@@ -87,7 +87,11 @@
     </div>
 
   </div>
-
+  <% else %>
+    <script type="text/javascript">
+      window.location.href="/welcome"  // put your correct path in a string here
+    </script>
+  <% end %>
 
 </body>
 </html>

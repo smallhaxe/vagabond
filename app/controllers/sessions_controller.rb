@@ -8,7 +8,9 @@ class SessionsController < ApplicationController
 		@user = User.confirm(user_params)
 		if @user
 			login(@user)
-			redirect_to users_path(current_user)
+			# if we want the profile
+			# redirect_to users_path(current_user)
+			redirect_to "/places"
 		else
 			redirect_to login_path
 		end

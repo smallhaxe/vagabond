@@ -28,6 +28,7 @@ class PostsController < ApplicationController
 	end
 
 	def update
+		@post = Post.find(params[:id])
 		if @post.update_attributes(post_params)
 			redirect_to post_path(@post)
 		else
@@ -50,6 +51,7 @@ class PostsController < ApplicationController
 	end
 
 	def set_user_post
+		# binding.pry
 		@post = current_user.posts.find(params[:id])
 		unless @post_path
 			redirect_to posts_path

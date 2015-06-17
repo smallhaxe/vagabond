@@ -21,6 +21,7 @@ class PlacesController < ApplicationController
 
 	def show
 		@place = Place.find(params[:id])
+		@posts = Post.where({place_id: params[:id]})
 	end
 
 	def edit

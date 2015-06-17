@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 		@user = User.confirm(user_params)
 		if @user
 			login(@user)
-			redirect_to "/users/profile"
+			redirect_to users_path(current_user)
 		else
 			redirect_to login_path
 		end

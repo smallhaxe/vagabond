@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   
   post "/sessions", to: "sessions#create"
 
-  delete "/sessions/:id", to: "sessions#destroy"
+  get "/sessions", to: "sessions#destroy"
   
 end
 

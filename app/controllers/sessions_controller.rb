@@ -16,14 +16,14 @@ class SessionsController < ApplicationController
 
 	def destroy
 		logout
-		redirect_to login_path
+		redirect_to welcome_path
 	end
 
 	private
 
-	# def login_params
-	# 	user = params.require(:user)
-	# 	[user[:email], user[:password]]
-	# end
+	def login_params
+		user = params.require(:user)
+		[user[:email], user[:password]]
+	end
 
 end

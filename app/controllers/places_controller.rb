@@ -3,7 +3,7 @@ class PlacesController < ApplicationController
 	before_action :set_user_place, only: [:edit, :update, :destroy]
 
 	def index
-		@places = current_user.places
+		@places = Place.all	
 	end
 
 	def new
@@ -21,7 +21,6 @@ class PlacesController < ApplicationController
 
 	def show
 		@place = Place.find(params[:id])
-
 	end
 
 	def edit

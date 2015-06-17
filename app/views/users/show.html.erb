@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,56 +10,56 @@
     .left-content {
 
       background-color: green;
-
       height: 600px;
 
-}
+    }
 
-.right-content {
-  height: 600px;
-  background-color: purple;
-   overflow: scroll;
-}
+    .right-content {
+      
+      height: 600px;
+      background-color: purple;
+      overflow: scroll;   
+    }
 
 
 
-.container h1 {
+    .container h1 {
 
-  color: white;
-}
-header h1 {
+      color: white;
+    }
 
-  padding-top: 5px;
-}
+    header h1 {
+
+      padding-top: 5px;
+
+    }
 
 
   </style>
+
 </head>
+
 <body>
   
-
+  <%= render "navbar"  %>
   <div class="container-fluid">
       <h1>Welcome, <small>person's name</small></h1>
   </div>
 
 
-<div class="container" ".col-lg">
-
+  <div class="container" ".col-lg">
 
 
     <div class="left-content col-md-5">
 
-   Welcome <%= @user.email %>
+      Welcome <%= @user.email %>
 
     </div>
-  <div class="right-content col-md-6 col-md-offset-1" >
 
-</div>
-
+    <div class="right-content col-md-6 col-md-offset-1" ></div>
 
 
-
-</div>
+  </div>
 
 
 </body>

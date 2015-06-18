@@ -15,9 +15,9 @@ users_seeds = [
               ]
               
 places_seeds = [
-                  ["San Francisco", "https://farm9.staticflickr.com/8233/8501175681_c9ae1e4f3e_o_d.jpg"],
-                  ["Oakland", "https://farm4.staticflickr.com/3025/3091637074_e769a3be23_o_d.jpg"],
-                  ["San Jose", "http://upload.wikimedia.org/wikipedia/commons/0/0f/SAN_JOSE_CALIFORNIA_PALM_TREE_2010.jpg"]
+                  ["San Francisco", 37.7577, -122.4376, "https://farm9.staticflickr.com/8233/8501175681_c9ae1e4f3e_o_d.jpg"],
+                  ["Oakland", 37.7919615, -122.2287941, "https://farm4.staticflickr.com/3025/3091637074_e769a3be23_o_d.jpg"],
+                  ["San Jose", 37.2970155, -121.8174109, "http://upload.wikimedia.org/wikipedia/commons/0/0f/SAN_JOSE_CALIFORNIA_PALM_TREE_2010.jpg"]
                 ]
 
 posts_seeds =   [
@@ -39,8 +39,8 @@ users_seeds.each do |first_name, last_name, email, password|
   
 end
 
-places_seeds.each do |name, picture|
-  Place.create( name: name, picture: picture )
+places_seeds.each do |name, lat, lng, picture|
+  Place.create( name: name, lat: lat, lng: lng, picture: picture )
 end
   
 

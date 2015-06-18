@@ -44,16 +44,14 @@ class PostsController < ApplicationController
 
 	def post_params
 		white_list = [
-					:author, :title, :body, 
-					:user_id, :place_id
-					]
+				:author, :title, :body, 
+				:user_id, :place_id
+			     ]
 		params.require(:post).permit(*white_list)
 	end
 
 	def set_user_post
 		@post = current_user.posts.find(params[:id])
-
 	end
-
 
 end

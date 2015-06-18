@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     user_params = params.require(:user).permit(:first_name, :last_name, :email, :password, :current_city)
     user = User.new(user_params)
     
-    if (user.save && user.password == user.password_confirmation)
+    if user.save
       login user
 
       redirect_to "/users/#{user.id}"

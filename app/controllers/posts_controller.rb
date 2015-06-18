@@ -28,6 +28,7 @@ class PostsController < ApplicationController
 	end
 
 	def update
+		@post = Post.find(params[:id])
 		if @post.update_attributes(post_params)
 			redirect_to post_path(@post)
 		else
@@ -43,18 +44,14 @@ class PostsController < ApplicationController
 
 	def post_params
 		white_list = [
-					:author, :title, :body, 
-					:user_id, :place_id
-					]
+				:author, :title, :body, 
+				:user_id, :place_id
+			     ]
 		params.require(:post).permit(*white_list)
 	end
 
 	def set_user_post
 		@post = current_user.posts.find(params[:id])
-		unless @post_path
-			redirect_to posts_path
-		end
 	end
-
 
 end

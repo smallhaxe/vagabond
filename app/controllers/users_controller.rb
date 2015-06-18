@@ -11,8 +11,8 @@ class UsersController < ApplicationController
   def create
     user_params = params.require(:user).permit(:first_name, :last_name, :email, :password, :current_city)
     user = User.new(user_params)
-
-    if user.save
+    
+    if (user.save && user.password == user.password_confirmation)
       login user
 
       redirect_to "/users/#{user.id}"

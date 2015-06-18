@@ -11,8 +11,8 @@ class UsersController < ApplicationController
   def create
     user_params = params.require(:user).permit(:first_name, :last_name, :email, :password, :current_city)
     user = User.new(user_params)
-
-    if user.save
+    
+    if (user.save && user.password == user.password_confirmation)
       login user
 
       redirect_to "/users/#{user.id}"
@@ -34,9 +34,10 @@ class UsersController < ApplicationController
   end 
 
   def update
-  	@user = @user.update_attributes(user_params)
-  	if @user
-  		redirect_to profile_path
+    # binding.pry
+    @user = User.find(params[:id])
+  	if @user.update_attributes(user_params)
+  		redirect_to user_path(current_user)
   	else
   		redirect_to edit_user_path(current_user)
   	end

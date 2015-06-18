@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+
+	<style type="text/css">
+	
+
+		#mainImage {
+			height: 400px;
+			text-align: center;
+		}
+
+		#cityImg {
+			max-width: 100%;
+			max-height: 100%;
+		}
+
+	.navbar-default {
+		margin: 0;
+	}
+
+	h1 {
+		display: block;
+	}
+	</style>
+
+	<body>
+		<%= render "/show/navbar"  %>
+		<div id="mainImage">
+
+			<h1><%= @place.name %></h1>
+			<img id="cityImg" src="<%= @place.picture %>">
+		</div>
+
+		<% @posts.each do |post| %>
+
+			<h3><%= post.title %></h3>
+			<h4><%= post.created_at %></h4>
+			<p><%= post.body %></p>
+
+		<% end %>
+
+	</body>
+</html>
+

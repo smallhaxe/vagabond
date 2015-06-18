@@ -51,11 +51,8 @@ class PostsController < ApplicationController
 	end
 
 	def set_user_post
-		# binding.pry
 		@post = current_user.posts.find(params[:id])
-		unless @post_path
-			redirect_to posts_path
-		end
+
 	end
 
 

@@ -5,6 +5,8 @@ class UsersController < ApplicationController
   end
   
   def profile
+    client = Instagram.client(:access_token => session[:access_token])
+    @user = client.user
     redirect_to users_path(current_user)
   end
   

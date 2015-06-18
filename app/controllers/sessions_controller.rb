@@ -8,22 +8,22 @@ class SessionsController < ApplicationController
 		@user = User.confirm(user_params)
 		if @user
 			login(@user)
-			redirect_to "/users/profile"
+			redirect_to "/places"
 		else
-			redirect_to login_path
+			redirect_to welcome_path
 		end
 	end
 
 	def destroy
 		logout
-		redirect_to login_path
+		redirect_to ("/")
 	end
 
 	private
 
-	# def login_params
-	# 	user = params.require(:user)
-	# 	[user[:email], user[:password]]
-	# end
+	def login_params
+		user = params.require(:user)
+		[user[:email], user[:password]]
+	end
 
 end

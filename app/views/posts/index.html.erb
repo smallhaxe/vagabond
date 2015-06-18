@@ -1,0 +1,10 @@
+
+<%= render "/show/navbar"  %>
+<% @posts.each do |post| %>
+  <div class="rendered-data">
+    <h3><span class="label label-default">Title:</span><%= post.title %></h3>
+    <h3><span class="label label-default">Description:</span><%= post.body %></h3>
+  </div>
+  <br>
+<% end %>
+	

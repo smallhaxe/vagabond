@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cities Page</title>
+	<style>
+		h1 {
+			color: black;
+		}
+		p {
+			color: black;
+		}
+	</style>
+    <script src="https://cdn.blockspring.com/blockspring.js"></script>
+</head>
+<body>
+	<%= render "/show/navbar"  %>
+	
+	<h1>Places</h1>
+	
+	<% @places.each do |place| %>
+
+		<div>
+			<a href="/places/<%= place.id %>"><h3><%= place.name %></h3></a>
+		</div>
+
+	<% end %>
+
+    <script>
+          blockspring.runParsed("interactive-google-map", { "locations": JSON.parse("[[\"latitude\",\"longitude\",\"tooltip\"],[\"37.4217542234\",\"-122.100920271\",\"Somewhere\"],[\"41.895964876906\",\"-87.632716978217\",\"Out\"],[\"28.58230778\",\"77.09399505\",\"There\"]]")}, { "api_key": "" }, function(res){
+              var map = (res.params);
+              $('body').append(map);
+                })
+            </script>
+
+</body>
+</html>

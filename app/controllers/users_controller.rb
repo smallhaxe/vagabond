@@ -9,9 +9,9 @@ class UsersController < ApplicationController
   end
   
   def create
-    user_params = params.require(:user).permit(:first_name, :last_name, :email, :password)
+    user_params = params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :current_city)
     user = User.new(user_params)
-
+    
     if user.save
       login user
 
@@ -26,16 +26,18 @@ class UsersController < ApplicationController
   end
   
   def show    
-  	 @user = User.find(params[:id])
+  	 @user = User.find(params[:id])      
   end
 
   def edit
-  end
+    @user = User.find(params[:id])
+  end 
 
   def update
-  	@user = @user.update_attributes(user_params)
-  	if @user
-  		redirect_to profile_path
+    # binding.pry
+    @user = User.find(params[:id])
+  	if @user.update_attributes(user_params)
+  		redirect_to user_path(current_user)
   	else
   		redirect_to edit_user_path(current_user)
   	end
@@ -55,7 +57,7 @@ class UsersController < ApplicationController
       white_list = [
                       :email, :email_confirmation,
                       :password, :password_confirmation,
-                      :first_name, :last_name
+                      :first_name, :last_name, :current_city
                    ]
       params.require(:user).permit(*white_list)			
     end

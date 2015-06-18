@@ -3,7 +3,7 @@ class PlacesController < ApplicationController
 	before_action :set_user_place, only: [:edit, :update, :destroy]
 
 	def index
-		@places = current_user.places
+		@places = Place.all	
 	end
 
 	def new
@@ -19,9 +19,9 @@ class PlacesController < ApplicationController
 		end
 	end
 
-	def show
-		@place = Place.find_by({id: params[:id]})
-
+	def show		
+		@place = Place.find(params[:id])
+		@posts = Post.where({place_id: params[:id]})
 	end
 
 	def edit
@@ -42,11 +42,14 @@ class PlacesController < ApplicationController
 	private
 
 	def place_params
-		params.require(:place).permit(:name, :picture)
+		white_list = [
+						:name, :picture
+					]
+		params.require(:place).permit(*white_list)
 	end
 
 	def set_user_place
-		@place = current_user.places.find_by({:id, params[:id]})
+		@place = current_user.places.find(params[:id])
 		unless @place
 			redirect_to places_path
 		end

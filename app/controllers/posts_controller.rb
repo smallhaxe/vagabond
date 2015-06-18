@@ -8,6 +8,7 @@ class PostsController < ApplicationController
 
 	def new
 		@post = Post.new
+		@places = Place.all
 	end
 
 	def create

@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
 			login(@user)
 			redirect_to "/places"
 		else
-			redirect_to login_path
+			redirect_to welcome_path
 		end
 	end
 

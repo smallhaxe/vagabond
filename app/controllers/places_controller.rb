@@ -21,7 +21,7 @@ class PlacesController < ApplicationController
 
 	def show		
 		@place = Place.find(params[:id])
-		@posts = Post.where({place_id: params[:id]})
+		@posts = Post.where({place_id: params[:id]}).sort_by(&:updated_at)
 	end
 
 	def edit
